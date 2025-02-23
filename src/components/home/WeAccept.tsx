@@ -14,29 +14,26 @@ import Payoneer from '/cardIcons/Payoneer.svg'
 import WesterUnion from '/cardIcons/Western Union.svg'
 import BitPay from '/cardIcons/BitPay.svg'
 
+const cards: string[] =[
+    MasterCard,
+    Paypal,
+    eBay,
+    GooglePay,
+    monobank,
+    Discover, 
+    WesterUnion,
+    Payoneer,
+    ApplePay,
+    AmericanExpress,
+    Amazon,
+    AliPay,
+    BitPay,
+    Bitcoin 
+]
 const WeAccept = () => {
 
-    // interface Card {
-    //     [index: number]: string;
-    // }
     
 
-    const cards: string[] =[
-        MasterCard,
-        Paypal,
-        eBay,
-        GooglePay,
-        monobank,
-        Discover, 
-        WesterUnion,
-        Payoneer,
-        ApplePay,
-        AmericanExpress,
-        Amazon,
-        AliPay,
-        BitPay,
-        Bitcoin 
-    ]
 
   return (
     <div className="flex flex-col gap-6 lg:w-[460px] "> 

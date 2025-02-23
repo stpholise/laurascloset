@@ -1,3 +1,5 @@
+
+import { clsx } from 'clsx' 
 interface HeighlightProps {
     title: string;
     description: string;
@@ -10,30 +12,18 @@ interface HeighlightProps {
     index: number;
   }
 
-  import { clsx } from 'clsx'
-  import { useState, useEffect } from 'react'
-
   const Heighlight = ({title, description, percentOff,  code,   image, colSpan, length, index} : HeighlightProps) => {
 
-  const [ imageSpan, setImageSpan ] = useState(false)
    
-
-    useEffect(() => {
-      if(colSpan) {
-        setImageSpan(true)
-      }
-    }, [colSpan,])
-
   return ( 
     
     <div className={`embla__slide min-w-11/12  md:min-w-md lg:min-w-min  lg:w-full   ${clsx(
-      {
-        
+      { 
         'mr-4': index === length - 1,
         'lg:mr-0': index === length - 1,
         'ml-0': index === 0,
         'lg:ml-0': index === 0,
-        'lg:col-span-2': imageSpan,
+        'lg:col-span-2': colSpan,
       }
     )}  relative overflow-hidden  md:h-80 md:w-full h-72 w-full   lg:h-[500px]`}> 
    { image && <img src={image} alt="" className="w-full h-full object-cover" />}

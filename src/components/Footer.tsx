@@ -1,97 +1,98 @@
  import NewsLetter from "./home/NewsLetter";
 import WeAccept from "./home/WeAccept";
 
+
+interface Menu  {
+  title: string;
+  link: string;
+}
+
+const CompanyInfo: Menu[] = [
+  {
+    title: 'About Laura’s Closet ',
+    link: '/about'
+  },
+  {
+    title: 'Social Responsibility',
+    link: '/Social'
+  },
+  {
+    title: 'Affiliate',
+    link: '/Affiliate'
+  },
+  {
+    title: 'Fashion Blogger',
+    link: '/Blogger'
+  }, 
+]
+
+const Help: Menu[] = [
+  {
+    title: 'Shipping Info',
+    link: '/help'
+  },
+  {
+    title: 'Returns',
+    link: '/return'
+  },
+  {
+    title: 'How to Order',
+    link: '/recalls'
+  },
+  {
+    title: 'How to Track',
+    link: '/accessibility'
+  },
+  {
+    title: 'Size Chart',
+    link: '/accessibility'
+  },
+]
+
+const Customer : Menu[] = [
+  {
+    title: 'Contact Us',
+    link: '/contact'
+  },
+  {
+    title: 'FAQs',
+    link: '/faqs'
+  },
+  {
+    title: 'Payment',
+    link: '/payment'
+  },
+  
+  {
+    title: 'Notices',
+    link: '/notices',
+  },
+]
+
+const legal: Menu[] = [
+  {
+    title: 'Privacy Center',
+    link: '/privacy'
+  },
+  {
+    title: 'Privacy & Cookie Policy',
+    link: '/privacy'
+  },
+  {
+    title: 'Manage Cookies',
+    link: '/privacy'
+  },
+  {
+    title: 'Copyright Notice',
+    link: '/privacy'
+  },
+  {
+    title: 'Imprint',
+    link: '/privacy'
+  },
+]
+
 const Footer = () => {
-
-  interface Menu  {
-    title: string;
-    link: string;
-  }
-
-  const CompanyInfo: Menu[] = [
-    {
-      title: 'About Laura’s Closet ',
-      link: '/about'
-    },
-    {
-      title: 'Social Responsibility',
-      link: '/Social'
-    },
-    {
-      title: 'Affiliate',
-      link: '/Affiliate'
-    },
-    {
-      title: 'Fashion Blogger',
-      link: '/Blogger'
-    }, 
-  ]
-
-  const Help: Menu[] = [
-    {
-      title: 'Shipping Info',
-      link: '/help'
-    },
-    {
-      title: 'Returns',
-      link: '/return'
-    },
-    {
-      title: 'How to Order',
-      link: '/recalls'
-    },
-    {
-      title: 'How to Track',
-      link: '/accessibility'
-    },
-    {
-      title: 'Size Chart',
-      link: '/accessibility'
-    },
-  ]
-
-  const Customer : Menu[] = [
-    {
-      title: 'Contact Us',
-      link: '/contact'
-    },
-    {
-      title: 'FAQs',
-      link: '/faqs'
-    },
-    {
-      title: 'Payment',
-      link: '/payment'
-    },
-    
-    {
-      title: 'Notices',
-      link: '/notices',
-    },
-  ]
-
-  const legal: Menu[] = [
-    {
-      title: 'Privacy Center',
-      link: '/privacy'
-    },
-    {
-      title: 'Privacy & Cookie Policy',
-      link: '/privacy'
-    },
-    {
-      title: 'Manage Cookies',
-      link: '/privacy'
-    },
-    {
-      title: 'Copyright Notice',
-      link: '/privacy'
-    },
-    {
-      title: 'Imprint',
-      link: '/privacy'
-    },
-  ]
 
   return (
     <div className="bg-[#F9FAFB]  text-gray-500 text-sm  ">

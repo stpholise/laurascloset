@@ -1,71 +1,71 @@
-import { useEffect, useCallback  } from 'react'
-import useEmblaCarousel from 'embla-carousel-react' 
-import { EmblaCarouselType,   } from 'embla-carousel'
+ 
+import useEmblaCarousel from 'embla-carousel-react'  
   import Autoplay from 'embla-carousel-autoplay'
 
+  interface Itags {
+    name: string;
+    append?: string;
+    link: string;
+  }
+const tagItems: Itags[] = [
+    { 
+        name: 'Denim',
+        link: 'denim'
+    },
+    {
+        name: 'New Arrivals',
+        append:'#Fresh',
+        link: 'New Arrivals'
+    },
+    {
+        name: 'Dresses',
+        link: 'dresses'
+    },
+    {
+        name: 'Tops',
+        link: 'tops'
+    },
+    {
+        name: 'Jackets',
+        link: 'jackets'
+    },
+    {
+        name: 'Lingerie & Lounge Wear',
+        link: 'lingerie'
+    },
+    {
+        name: 'Beachwear',
+        link: 'beachwear'
+    },
+    {
+        name: 'Blouses',
+        link: 'blouse'
+    },
+    {
+        name: 'Vintage',
+        link: 'vintage'
+    },
+    {
+        name: 'Shoes',
+        link: 'shoes'
+    },
+    {
+        name: 'Sandals',
+        link: 'sandals'
+    },
+    {
+        name: 'Bags',
+        link: 'bags'
+    },
+    {
+        name: 'Juwelries',
+        link: 'juwelries'
+    }
+]
 const Tags = () => { 
-    interface Itags {
-        name: string;
-        append?: string;
-        link: string;
-      }
-    const tagItems: Itags[] = [
-        { 
-            name: 'Denim',
-            link: 'denim'
-        },
-        {
-            name: 'New Arrivals',
-            append:'#Fresh',
-            link: 'New Arrivals'
-        },
-        {
-            name: 'Dresses',
-            link: 'dresses'
-        },
-        {
-            name: 'Tops',
-            link: 'tops'
-        },
-        {
-            name: 'Jackets',
-            link: 'jackets'
-        },
-        {
-            name: 'Lingerie & Lounge Wear',
-            link: 'lingerie'
-        },
-        {
-            name: 'Beachwear',
-            link: 'beachwear'
-        },
-        {
-            name: 'Blouses',
-            link: 'blouse'
-        },
-        {
-            name: 'Vintage',
-            link: 'vintage'
-        },
-        {
-            name: 'Shoes',
-            link: 'shoes'
-        },
-        {
-            name: 'Sandals',
-            link: 'sandals'
-        },
-        {
-            name: 'Bags',
-            link: 'bags'
-        },
-        {
-            name: 'Juwelries',
-            link: 'juwelries'
-        }
-    ]
 
-    const [emblaRef, emblaApi ] = useEmblaCarousel(
+
+    const [emblaRef,  ] = useEmblaCarousel(
         {   loop: true, 
             align:'start', 
             dragFree: false,
@@ -76,22 +76,9 @@ const Tags = () => {
             breakpoints: {
                 '(min-width: 768px)': { loop: false, dragFree: true, skipSnaps: false, duration: 100, slidesToScroll: 1  },
                 '(min-width: 1280px)': { active: false }, 
-            },     
-
+            },      
         },[Autoplay()] ) 
 
-        const logPluginEvent = useCallback(( emblaApi: EmblaCarouselType, mauseOver: string) => {
-            console.log(`Autoplay just triggered ${mauseOver}!`)
-            console.log(`Autoplay just triggered ${emblaApi}!`)
-          }, [])
-
-    useEffect(() => {
-        if (emblaApi) {
-            emblaApi.on('slidesInView', ( ) => {  });   
-            emblaApi.on('autoplay:stop', () => logPluginEvent(emblaApi, 'stopped'));
-        }  
-      }, [emblaApi, logPluginEvent])
-    
 
   return (
     <div ref={emblaRef}  className="embla container mx-auto"  >
