@@ -1,0 +1,37 @@
+@layer utilities {
+    .striped-bg {
+      background: repeating-linear-gradient(
+        120deg,             /* Angle of stripes (45 degrees for diagonal stripes) */
+        #111827,           /* Stripe color 1 */
+        #111827 20px,      /* Stripe 1 width */
+        #1C2333 10px,      /* Stripe color 2 */
+        #1C2333 50px       /* Stripe 2 width */
+      );
+    }
+    .double-striped-bg{
+      background: linear-gradient(
+        125deg, 
+        #111827 87%,
+        #3C7A89 87%,
+        #3C7A89 92%,
+        #EB5757 92%,
+        #EB5757 97%,
+        #111827 97%
+
+      )
+    }
+  
+    .embla {
+      overflow: hidden;
+    }
+    .embla__container {
+      display: flex;
+    }
+  
+
+    @media (max-width: 1024px) {
+      
+    }
+    
+  }
+
