@@ -32,7 +32,7 @@ const NewsLetter = () => {
         <div className="">
             <div className=" w-full">
                 <h3 className="font-medium uppercase text-[#1F2937] text-center sm:text-left">SIGN UP FOR LAURAS'S COLSET STYLE NEWS</h3>
-                <form action="" className="flex w-full gap-2 flex-col items-center sm:flex-row sm:gap-4">
+                <form action="" className="flex w-full gap-2 flex-col items-start sm:items-center sm:flex-row sm:gap-4">
                     <input type="text" placeholder="Your email " className="lg:w-[410px] max-w-md w-full sm:w-10/12 outline-0 px-4 py-2 border lg:h-11 border-gray-200 "/>
                     <button type="submit" className='bg-[#1F2937] text-white lg:h-11 w-fit px-10 sm:w-40 py-2 '>Subscribe</button>
                 </form> 

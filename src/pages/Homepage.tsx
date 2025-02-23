@@ -1,124 +1,98 @@
  
- import Hero from '../components/home/Hero'
- import PopularCard from '../components/home/PopularCard'
-
-
+  import Hero from '../components/home/Hero'
+  import PopularCard from '../components/home/PopularCard'  
   import Item1 from '../assets/itemsImage/item1.jpg'
   import Item2 from '../assets/itemsImage/item2.jpg'
   import Item3 from '../assets/itemsImage/item3.jpg'
-  import Item4 from '../assets/itemsImage/item4.jpg'
-
+  import Item4 from '../assets/itemsImage/item4.jpg' 
   import Chanel from '../assets/brands/chanel.svg'
   import DG from '../assets/brands/D&G.svg'
   import Dior from '../assets/brands/Dior.svg'
   import Versace from '../assets/brands/Versace.svg'
   import Zara from '../assets/brands/Zara.svg'
-  import Gucci from '../assets/brands/Gucci.svg'
+  import Gucci from '../assets/brands/Gucci.svg'  
+  import Marquee from "react-fast-marquee"; 
+  import HeighlightCont from '../components/home/HighlightWrapper'
 
-  import SummerBg from '/images/summerbg.jpg'
-
-  
-import Marquee from "react-fast-marquee";
-import { useEffect, useState } from 'react'
-
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import HeighlightCont from '../components/home/HeighlightCont'
-
-const Homepage = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, [])
-  const [slider, setSlider] = useState(false)
-
-  useEffect(() => {
-      if(window.innerWidth < 768){
-          setSlider(true)
-      }
-      else{
-          setSlider(false)
-      } 
-  }, [])
-  console.log(slider)
-  
+ interface Popular {
+   title: string;
+   description: string;
+   image: string;
+   oldPrice: number;
+   newPrice: number;
+   link:string; 
+ }
+ 
+ interface Brands {
+   name: string;
+   image: string;
+ }
 
  
-  interface Popular {
-    title: string;
-    description: string;
-    image: string;
-    oldPrice: number;
-    newPrice: number;
-    link:string; 
-  }
+   const popular: Popular[] = [
+     {
+       title: 'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse',
+       description: 'Exclusive Shoes',
+       image: Item1,
+       oldPrice: 200,
+       newPrice: 150,
+       link: 'shoes', 
+     },
+     {
+       title: 'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse',
+       description: 'Exquisite Styles & Collections',
+       image: Item2,
+       oldPrice: 200,
+       newPrice: 150,
+       link: 'shoes', 
+     },
+     {
+       title: 'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse',
+       description: 'New Arrivals',
+       image: Item3,
+       oldPrice: 200,
+       newPrice: 150,
+       link: 'shoes', 
+     },
+     {
+       title: 'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse',
+       description: 'Exclusive Items',
+       image: Item4,
+       oldPrice: 200,
+       newPrice: 150,
+       link: 'shoes', 
+     },
+   ]
+ 
+   const brands: Brands[] = [
+     {
+       name: 'Chanel',
+       image: Chanel
+     },
+     {
+       name: 'D&G',
+       image: DG
+     },
+     {
+       name: 'Dior',
+       image: Dior
+     },
+     {
+       name: 'Versace',
+       image: Versace
+     },
+     {
+       name: 'Zara',
+       image: Zara
+     },
+     {
+       name: 'Gucci',
+       image: Gucci
+     },
+   ]
+const Homepage = () => {
   
-  interface Brands {
-    name: string;
-    image: string;
-  }
 
-
-  const popular: Popular[] = [
-    {
-      title: 'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse',
-      description: 'Exclusive Shoes',
-      image: Item1,
-      oldPrice: 200,
-      newPrice: 150,
-      link: 'shoes', 
-    },
-    {
-      title: 'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse',
-      description: 'Exquisite Styles & Collections',
-      image: Item2,
-      oldPrice: 200,
-      newPrice: 150,
-      link: 'shoes', 
-    },
-    {
-      title: 'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse',
-      description: 'New Arrivals',
-      image: Item3,
-      oldPrice: 200,
-      newPrice: 150,
-      link: 'shoes', 
-    },
-    {
-      title: 'Striped Flutter Sleeve Overlap Collar Peplum Hem Blouse',
-      description: 'Exclusive Items',
-      image: Item4,
-      oldPrice: 200,
-      newPrice: 150,
-      link: 'shoes', 
-    },
-  ]
-
-  const brands: Brands[] = [
-    {
-      name: 'Chanel',
-      image: Chanel
-    },
-    {
-      name: 'D&G',
-      image: DG
-    },
-    {
-      name: 'Dior',
-      image: Dior
-    },
-    {
-      name: 'Versace',
-      image: Versace
-    },
-    {
-      name: 'Zara',
-      image: Zara
-    },
-    {
-      name: 'Gucci',
-      image: Gucci
-    },
-  ]
 
   return (
     <div className=' '>
@@ -157,24 +131,24 @@ const Homepage = () => {
               <div className="border-2 border-[#374151]  w-24 rounded-4xl"></div>
             </div>
             <div className="  w-full md:w-auto flex  gap-10 ">
-              {  slider ? 
-                    <Marquee   gradient={false} speed={30} pauseOnHover={true} className="flex gap-4">
+           
+                    <Marquee   gradient={false} speed={30} pauseOnHover={true} className="flex gap-4 md:hidden  ">
                       {
                         brands.map((item, index) =>(
-                          <img key={`${index} ${item.name}`} src={item.image}  alt={`${item.name}`}  className='h-14 mr-8' />
+                          <img key={`${index} ${item.name}`} src={item.image}  alt={`${item.name}`}  className='h-14 mr-8 md:hidden' />
                       
                         )
                         )
                       }
                     </Marquee>
-                 : 
-                brands.map((item, index) => (
-                 <img key={`${index} ${item.name}`} src={item.image}  alt={`${item.name}`}  className='h-14' />
-                ))
-              }
+                { 
+                  brands.map((item, index) => (
+                  <img key={`${index} ${item.name}`} src={item.image}  alt={`${item.name}`}  className='h-14 hidden md:flex' />
+                  ))
+                }
             </div>
           </section>
-          { SummerBg &&
+          
             <section className={`bg-[url('/images/summerbg.jpg')]  bg-cover bg-center bg-no-repeat  relative h-96   lg:h-[500px] `}>
               <div className="flex flex-col items-start px-8 justify-center h-full bg-transparent  gap-4">
                 <h2 className=" text-2xl sm:text-4xl text-[#0D3F64] font-semibold uppercase">Summer <span className='text-red-400'> Collections</span></h2>
@@ -203,7 +177,7 @@ const Homepage = () => {
                 </div> 
               </div>
             </section>
-          }   
+        
         </main>
 
 
