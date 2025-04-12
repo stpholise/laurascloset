@@ -86,7 +86,7 @@ const Tags = () => {
             {
               
             tagItems.map((item, index) =>(
-                    <button key={index}   className={`embla__slide cursor-pointer    min-w-fit   text-[#6B7280] text-sm px-2 w-max font-medium hover:text-[#1F2937] ${index === 0 ?  ' sm:ml-4 lg:ml-0': ''}${tagItems.length - 1 === index ?  ' sm:mr-4 md:mr-8 lg:mr-0': ''}`}> 
+                <button key={index}   className={`embla__slide cursor-pointer    min-w-fit   text-[#6B7280] text-sm px-2 w-max font-medium hover:text-[#1F2937] ${index === 0 ?  ' sm:ml-4 lg:ml-0': ''}${tagItems.length - 1 === index ?  ' sm:mr-4 md:mr-8 lg:mr-0': ''}`}> 
                    {item.name} 
                     {  item.append && <span className="bg-[#EB5757] ml-2 px-1 text-white">{item.append}</span> }
                 </button>     
