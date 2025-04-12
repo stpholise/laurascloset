@@ -70,8 +70,7 @@ const HeighlightCont = () => {
             '(max-width: 1024px)': { active: true }, 
            
             '(min-width: 1024px)': { active: false }, 
-        },     
-
+        },      
     },[Autoplay({delay: 5000,})])
 
 
